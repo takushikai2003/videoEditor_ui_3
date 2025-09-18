@@ -1,5 +1,5 @@
 #sources_panel{
-    width:40%;
+    width:30%;
     overflow:auto;
     margin: 10px 0 0 10px;
     border: 1px solid var(--surface-variant);

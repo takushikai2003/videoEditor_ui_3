@@ -3,6 +3,7 @@
 @import url("./sources_panel.css");
 @import url("./preview_panel.css");
 @import url("./timeline_panel.css");
+@import url("./edit_panel.css");
 /* @import url("./colortheme.css"); */
 
 [hidden] {

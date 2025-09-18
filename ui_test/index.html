@@ -139,9 +139,9 @@
 
         
 
-        <!-- 右パネル（プレビュー） -->
-        <div id="preview_panel" class="surface p" style="flex:1; overflow:auto; display: flex; flex-direction: column; height: 100%;">
-            <div id="preview_canvas_wrapper" style="flex:1;">
+        <!-- 中央パネル（プレビュー） -->
+        <div id="preview_panel" class="surface p" style="flex:2; overflow:auto; display: flex; flex-direction: column; height: 100%;">
+            <div id="preview_canvas_wrapper" style="flex:1; height: calc(100% - 50px);">
                 <canvas id="preview_canvas"></canvas>
             </div>
             
@@ -158,11 +158,16 @@
                 </span>
             </div>
         </div>
+
+        <!-- 右パネル（編集） -->
+        <div id="edit_panel" class="surface p" style="flex:1">
+            <h5>Properties</h5>
+        </div>
     </div>
 
     <!-- 下部タイムライン -->
     <footer id="timeline_panel" class="surface p">
-        タイムライン（横スクロール可能にすると編集ソフトっぽくなる）
+        タイムライン
     </footer>
 
 
