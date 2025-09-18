@@ -1,0 +1,8 @@
+#timeline_panel{
+    height:40%;
+    overflow-x:auto;
+    white-space:nowrap;
+    margin: 10px 10px 0 10px;
+
+    border: 1px solid var(--surface-variant);
+}

@@ -1,0 +1,9 @@
+#preview_panel{
+    border: 1px solid var(--surface-variant);
+    margin: 10px 10px 0 10px;
+}
+
+#preview_canvas{
+    width: 100%;
+    background-color:darkgray;
+}

@@ -1,0 +1,29 @@
+
+header.appbar {
+    display: flex;               /* 横並び */
+    align-items: center;         /* 縦中央 */
+    justify-content: flex-start; /* 左寄せ */
+    gap: 4px;                    /* ボタン間の隙間 */
+    height: auto !important;     /* 固定高さを解除 */
+    min-height: auto !important;
+    max-height: none !important;
+    padding: 3px 8px;
+    border: 1px solid var(--surface-variant);
+}
+
+header.appbar button {
+    margin: 0;/* 不要なマージンを除去 */
+}
+
+#project_name:not(:focus) {
+    border-color: transparent; /* フォーカスが無いとき透明 */
+}
+
+.field.small.middle {
+    margin: 0;
+}
+
+#export_video_btn{
+    /* background-color:#e7a94b; */
+    background-color: var(--primary);
+}

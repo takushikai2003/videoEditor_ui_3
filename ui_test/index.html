@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- BeerCSSの読み込み -->
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.12.7/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@latest/dist/cdn/beer.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+
+<body class="light" style="margin:0; height:100vh; display:flex; flex-direction:column;">
+
+    <!-- 上部ツールバー -->
+    <header class="appbar surface-container-low">
+        <!-- <button class="circle transparent"><i>menu</i></button>
+        <button class="circle transparent"><i>settings</i></button> -->
+
+        <div class="field border small middle ">
+            <input type="text" placeholder="Project Name" id="project_name">
+        </div>
+
+        <button class="small-round primary-container">Open File</button>
+
+        <button class="small-round primary-container">
+            Project <i>arrow_drop_down</i>
+            <menu>
+                <li><a id="export_project">Export</a></li>
+                <li><a id="import_project">Import</a></li>
+            </menu>
+        </button>
+        
+        <!-- このdivが左要素と右要素の間を押し広げる -->
+        <div style="flex:1"></div>
+
+        <button id="export_video_btn">Export Video</button>
+
+    </header>
+
+    <!-- 中央領域（flexで左右に分割） -->
+    <div style="flex:1; display:flex; overflow:hidden;">
+
+        <!-- 左パネル（ソース） -->
+        <div id="sources_panel" class="surface p">
+            <div>
+                <!-- タブ -->
+                <div class="tabs">
+                    <a class="active" data-ui="#videos_tab" tabindex="0">Videos</a>
+                    <a data-ui="#audios_tab" tabindex="0">Audios</a>
+                    <a data-ui="#effects_tab" tabindex="0">Effects</a>
+                </div>
+
+                <!-- タブコンテンツ -->
+                <div class="page active" id="videos_tab">
+                    
+                    <div class="sources_grid">
+
+                        <span class="source_content no-padding border small-round">
+                            <img src="../ui/images/audio.svg">
+                            <div class="absolute bottom left right padding bottom-shadow white-text">
+                            <nav class="">
+                                <div class="small">Title 1</div>
+                                <button class="circle transparent small">
+                                    <i>more_vert</i>
+                                    <menu class="right no-wrap">
+                                        <li onclick="
+                                            // this.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
+                                        ">削除</li>
+                                    </menu>
+                                </button>
+                            </nav>
+                            </div>
+                        </span>
+
+                        <span class="source_content no-padding border small-round">
+                            <img src="../ui/images/audio.svg">
+                            <div class="absolute bottom left right padding bottom-shadow white-text">
+                            <nav class="">
+                                <div class="small">Title 1</div>
+                                <button class="circle transparent small">
+                                    <i>more_vert</i>
+                                    <menu class="right no-wrap">
+                                        <li>削除</li>
+                                    </menu>
+                                </button>
+                            </nav>
+                            </div>
+                        </span>
+
+                    </div>
+
+                </div>
+                <div class="page" id="audios_tab">
+                    <div class="sources_grid">
+                        <span class="source_content no-padding border small-round">
+                            <img src="../ui/images/audio.svg">
+                            <div class="absolute bottom left right padding bottom-shadow white-text">
+                            <nav class="">
+                                <div class="small">Audio 1</div>
+                                <button class="circle transparent small">
+                                    <i>more_vert</i>
+                                    <menu class="right no-wrap">
+                                        <li onclick="
+                                            // this.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
+                                        ">削除</li>
+                                    </menu>
+                                </button>
+                            </nav>
+                            </div>
+                        </span>
+
+                        <span class="source_content no-padding border small-round">
+                            <img src="../ui/images/audio.svg">
+                            <div class="absolute bottom left right padding bottom-shadow white-text">
+                            <nav class="">
+                                <div class="small">Audio 2</div>
+                                <button class="circle transparent small">
+                                    <i>more_vert</i>
+                                    <menu class="right no-wrap">
+                                        <li>削除</li>
+                                    </menu>
+                                </button>
+                            </nav>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="page" id="effects_tab">
+                    <div class="sources_grid">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- 右パネル（プレビュー） -->
+        <div id="preview_panel" class="surface p" style="flex:1; overflow:auto; display: flex; flex-direction: column; height: 100%;">
+            <div id="preview_canvas_wrapper" style="flex:1;">
+                <canvas id="preview_canvas"></canvas>
+            </div>
+            
+            <div id="preview_player" class="surface-container" style="height: 50px; flex-shrink: 0;">
+                <button id="play_icon" class="transparent square">
+                    <i>play_arrow</i>
+                </button>
+                <button id="pause_icon" class="transparent square" hidden>
+                    <i>pause</i>
+                </button>
+
+                <span>
+                    00:00:00/00:00:00
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 下部タイムライン -->
+    <footer id="timeline_panel" class="surface p">
+        タイムライン（横スクロール可能にすると編集ソフトっぽくなる）
+    </footer>
+
+
+    <script src="./main.js"></script>
+</body>
